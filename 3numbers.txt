@@ -1,0 +1,39 @@
+class Numbers {
+ 
+    
+    boolean a(int L[], int array_size, int sum)
+    {
+       
+ 
+        
+        for (int i = 0; i < array_size - 2; i++) {
+ 
+            
+            for (int j = i + 1; j < array_size - 1; j++) {
+ 
+                
+                for (int k = j + 1; k < array_size; k++) {
+                    if (L[i] + L[j] + L[k] == sum) {
+                        System.out.print("Numbers are " + L[i] + 
+                                     ", " + L[j] + ", " + L[k]);
+                        return true;
+                    }
+                }
+            }
+        }
+ 
+        
+        return false;
+    }
+ 
+    
+    public static void main(String[] args)
+    {
+    Numbers n = new Numbers();
+        int L[] = { 1,2,4,5 };
+        int sum = 7;
+        int array_size = L.length;
+ 
+        n.a(L,array_size,sum);
+    }
+}

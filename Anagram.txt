@@ -1,0 +1,28 @@
+import java.util.Arrays;  
+   
+public class AnagramString {  
+    static void Anagram_check(String str1, String str2) {  
+        String l1 = str1.replaceAll("\\s", "");  
+        String l2 = str2.replaceAll("\\s", "");  
+        boolean check = true;  
+        if (l1.length() != l2.length()) {  
+            check = false;  
+        } else {  
+            char[] Array_SL1 = l1.toLowerCase().toCharArray();  
+            char[] Array_SL2 = l2.toLowerCase().toCharArray();  
+            Arrays.sort(Array_SL1);  
+            Arrays.sort(Array_SL2);  
+            check = Arrays.equals(Array_SL1, Array_SL2);  
+        }  
+        if (check) {  
+            System.out.println(l1 + " , " + l2 + " are anagrams");  
+        } else {  
+            System.out.println(l1 + " , " + l2 + " are not anagrams");  
+        }  
+    }  
+   
+    public static void main(String[] args) {  
+        Anagram_check("rasp", "spar");  
+        Anagram_check("cat", "dog");  
+    }  
+}  
